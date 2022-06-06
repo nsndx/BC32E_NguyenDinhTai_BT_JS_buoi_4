@@ -28,20 +28,20 @@
   border-radius: 6px;
   transition: all 0.3s;
 }
-.left button:hover{
+.left button:hover {
   color: brown;
   transform: scale(1.1);
 }
 .left button i {
   color: brown;
 }
-.left button i:last-of-type{
+.left button i:last-of-type {
   display: none;
 }
-.left button:first-child i:last-of-type{
+.left button:first-child i:last-of-type {
   display: inline-block;
 }
-.left button:first-child i:first-of-type{
+.left button:first-child i:first-of-type {
   display: none;
 }
 
@@ -50,18 +50,21 @@
   background: #ddd;
   padding: 20px;
 }
-.right .bai{
+.right .bai {
   display: none;
 }
-.right .bai:first-child{
+.right .bai:first-child {
   display: block;
 }
 
-.right h1{
+.right h1 {
   margin-bottom: 20px;
 }
-
-.right input{
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+.right input,
+.right select {
   font-size: 20px;
   padding: 8px;
   margin: 0 20px 10px 0;
@@ -72,12 +75,15 @@
   background-color: #eee;
   max-width: 100%;
   width: 220px;
+  appearance: none;
 }
-.right input:focus{
+.right input:focus,
+.right select:focus {
   background-color: #fff;
   box-shadow: 1px 3px 3px #aaa;
 }
-.right button{
+
+.right button {
   font-size: 20px;
   padding: 10px 20px;
   border-radius: 40px;
@@ -88,31 +94,31 @@
   background-color: brown;
   color: #fff;
 }
-.right button:hover{
+.right button:hover {
   transform: scale(1.1);
 }
-.right .ketqua{
+.right .ketqua {
   font-size: 30px;
   background-color: #0fd191;
   border-radius: 6px;
   line-height: 50px;
   padding: 0 5px;
 }
-.right .ketqua i{
+.right .ketqua i {
   color: brown;
   font-size: 20px;
 }
 
-@media screen and (max-width:576px){
-  #section{
+@media screen and (max-width: 576px) {
+  #section {
     display: block;
   }
-  .left{
+  .left {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .left button{
+  .left button {
     margin: 0 10px 10px 0;
-  } 
+  }
 }

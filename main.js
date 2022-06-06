@@ -103,23 +103,75 @@ document.getElementById('btn_bai1').onclick = function () {
     if (b1_soThu1 > b1_soThu2) {
         if (b1_soThu2 > b1_soThu3) {
             kqBai1 = b1_soThu3 + ' < ' + b1_soThu2 + ' < ' + b1_soThu1
+        } else if (b1_soThu3 > b1_soThu1) {
+            kqBai1 = b1_soThu2 + ' < ' + b1_soThu1 + ' < ' + b1_soThu3
         } else {
-            if (b1_soThu3 > b1_soThu1) {
-                kqBai1 = b1_soThu2 + ' < ' + b1_soThu1 + ' < ' + b1_soThu3
-            } else {
-                kqBai1 = b1_soThu2 + ' < ' + b1_soThu3 + ' < ' + b1_soThu1
-            }
+            kqBai1 = b1_soThu2 + ' < ' + b1_soThu3 + ' < ' + b1_soThu1
         }
     } else {
         if (b1_soThu2 < b1_soThu3) {
             kqBai1 = b1_soThu1 + ' < ' + b1_soThu2 + ' < ' + b1_soThu3
+        } else if (b1_soThu3 < b1_soThu1) {
+            kqBai1 = b1_soThu3 + ' < ' + b1_soThu1 + ' < ' + b1_soThu2
         } else {
-            if (b1_soThu3 < b1_soThu1) {
-                kqBai1 = b1_soThu3 + ' < ' + b1_soThu1 + ' < ' + b1_soThu2
-            } else {
-                kqBai1 = b1_soThu1 + ' < ' + b1_soThu3 + ' < ' + b1_soThu2
-            }
+            kqBai1 = b1_soThu1 + ' < ' + b1_soThu3 + ' < ' + b1_soThu2
         }
+
     }
     document.querySelector('.right .kqBai1').innerHTML = kqBai1
+}
+// Bài 2: Chương trình chào hỏi
+/*Mô hình 3 khối
+- Đầu vào: Lựa chọn 1 trong 4 thành viên của gia đình gồm (Bố, Mẹ, anh Trai, em Gái)
+- Xử lý: 
+    + Tạo biến cacThanhVien và gán giá trị từ người dùng lựa chọn
+    + Tạo biến kqBai2
+    + So sánh giá trị của biến cacThanhVien với giá trị của từng thành viên trong gia đình 
+    + Đưa ra kết quả lời chào với từng thành viên.
+- Đầu ra: Lời chào thành viên được chọn 
+ */
+document.getElementById('btn_bai2').onclick = function () {
+    var cacThanhVien = document.getElementById('cacThanhVien').value
+    var kqBai2;
+    if (cacThanhVien == 'bo') {
+        kqBai2 = 'Xin chào Bố!'
+    } else if (cacThanhVien == 'me') {
+        kqBai2 = 'Xin chào Mẹ!'
+    } else if (cacThanhVien == 'anhTrai') {
+        kqBai2 = 'Xin chào Anh Trai!'
+    } else if (cacThanhVien == 'emGai') {
+        kqBai2 = 'Xin chào Em Gái!'
+    } else {
+        kqBai2 = 'Xin chào Người lạ ơi!'
+    }
+
+    document.querySelector('.right .kqBai2').innerHTML = kqBai2
+}
+//Bài 3: Đếm số chẵn, số lẻ
+/* Mô hình 3 khối
+- Đầu vào: 3 số nguyên
+- Xử lý:
+    + Tạo biến b3_soThu1 và gán giá trị từ người dùng
+    + Tạo biến b3_soThu2 và gán giá trị từ người dùng
+    + Tạo biến b3_soThu3 và gán giá trị từ người dùng
+    + Tạo biến kqBai3 và gán giá trị bằng 0
+    + kiểm tra lần lượt các giá trị từ người dùng, giá trị nào %2 == 0 thì tăng giá trị biến kqBai3 lên 1
+    + số số lẻ bằng (3 - kqBai3)
+- Đầu ra: số số chẵn kqBai3, số số lẻ (3 - kqBai3)
+*/
+document.getElementById('btn_bai3').onclick = function () {
+    var b3_soThu1 = Number(document.getElementById('b3_soThu1').value)
+    var b3_soThu2 = Number(document.getElementById('b3_soThu2').value)
+    var b3_soThu3 = Number(document.getElementById('b3_soThu3').value)
+    var kqBai3 = 0;
+    if (b3_soThu1 % 2 == 0) {
+        kqBai3++
+    }
+    if (b3_soThu2 % 2 == 0) {
+        kqBai3++
+    }
+    if (b3_soThu3 % 2 == 0) {
+        kqBai3++
+    }
+    document.querySelector('.right .kqBai3').innerHTML = 'có ' + kqBai3 + ' số chẵn' + ', ' + (3 - kqBai3) + ' số lẻ'
 }
