@@ -116,7 +116,6 @@ document.getElementById('btn_bai1').onclick = function () {
         } else {
             kqBai1 = b1_soThu1 + ' < ' + b1_soThu3 + ' < ' + b1_soThu2
         }
-
     }
     document.querySelector('.right .kqBai1').innerHTML = kqBai1
 }
@@ -127,7 +126,7 @@ document.getElementById('btn_bai1').onclick = function () {
     + Tạo biến cacThanhVien và gán giá trị từ người dùng lựa chọn
     + Tạo biến kqBai2
     + So sánh giá trị của biến cacThanhVien với giá trị của từng thành viên trong gia đình 
-    + Đưa ra kết quả lời chào với từng thành viên.
+    + Đưa ra kết quả là lời chào với từng thành viên.
 - Đầu ra: Lời chào thành viên được chọn 
  */
 document.getElementById('btn_bai2').onclick = function () {
@@ -144,7 +143,6 @@ document.getElementById('btn_bai2').onclick = function () {
     } else {
         kqBai2 = 'Xin chào Người lạ ơi!'
     }
-
     document.querySelector('.right .kqBai2').innerHTML = kqBai2
 }
 //Bài 3: Đếm số chẵn, số lẻ
@@ -174,4 +172,38 @@ document.getElementById('btn_bai3').onclick = function () {
         kqBai3++
     }
     document.querySelector('.right .kqBai3').innerHTML = 'có ' + kqBai3 + ' số chẵn' + ', ' + (3 - kqBai3) + ' số lẻ'
+}
+// Bài 4: Nhận biết tam giác
+/*Mô hình 3 khối
+ - Đầu vào: chiều dài 3 cạnh của tam giác
+ - Xử lý:
+    + Tạo biến canh1 và gán giá trị từ người dùng
+    + Tạo biến canh2 và gán giá trị từ người dùng
+    + Tạo biến canh3 và gán giá trị từ người dùng
+    + Tạo biến kqBai4
+    + So sánh các cạnh với nhau nếu
+        + Có 3 cạnh bằng nhau là Tam giác đều
+        + Có 2 cạnh bằng nhau là Tam giác cân
+        + Có 1 cạnh bình phương bằng tổng của bình phương mỗi cạnh còn lại là Tam giác vuông
+        + Có 3 cạnh không thuộc các trường hợp trên là Tam giác nào đó
+- Đầu ra: đưa ra tên tam giác
+ */
+document.getElementById('btn_bai4').onclick = function () {
+    var canh1 = Number(document.getElementById('canh1').value)
+    var canh2 = Number(document.getElementById('canh2').value)
+    var canh3 = Number(document.getElementById('canh3').value)
+    var canh1Bp = canh1 * canh1
+    var canh2Bp = canh2 * canh2
+    var canh3Bp = canh3 * canh3
+    var kqBai4;
+    if (canh1 == canh2 && canh1 == canh3 && canh2 == canh3) {
+        kqBai4 = 'Tam giác đều'
+    } else if (canh1 == canh2 || canh1 == canh3 || canh2 == canh3) {
+        kqBai4 = 'Tam giác cân'
+    } else if (canh1Bp == canh2Bp + canh3Bp || canh2Bp == canh1Bp + canh3Bp || canh3Bp == canh1Bp + canh2Bp) {
+        kqBai4 = 'Tam giác vuông'
+    } else {
+        kqBai4 = 'Tam giác nào đó'
+    }
+    document.querySelector('.right .kqBai4').innerHTML = kqBai4
 }
