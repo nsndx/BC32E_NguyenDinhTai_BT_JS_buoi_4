@@ -207,3 +207,64 @@ document.getElementById('btn_bai4').onclick = function () {
     }
     document.querySelector('.right .kqBai4').innerHTML = kqBai4
 }
+// Bài 5: Tìm ngày tháng
+
+
+document.getElementById('btn_bai51').onclick = function () {
+    var ngay = Number(document.getElementById('ngay').value)
+    var thang = Number(document.getElementById('thang').value)
+    var nam = Number(document.getElementById('nam').value)
+    var kqBai5;
+    if (thang < 1 || thang > 12 || nam < 0) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if ((thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10) && (ngay < 1 || ngay > 31)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if ((thang == 4 || thang == 6 || thang == 9 || thang == 11) && (ngay < 1 || ngay > 30)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if (thang == 2 && nam % 4 == 0 && (ngay < 1 || ngay > 29)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if (thang == 2 && nam % 4 != 0 && (ngay < 1 || ngay > 28)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if (ngay == 1 && thang == 1) {
+        kqBai5 = 'ngày 31 tháng 12 năm  ' + (nam - 1)
+    } else if (ngay == 1 && (thang == 2 || thang == 5 || thang == 7 || thang == 10 || thang == 12)) {
+        kqBai5 = 'ngày 30 tháng ' + (thang - 1) + ' năm ' + nam
+    } else if (ngay == 1 && thang == 3 && nam % 4 == 0) {
+        kqBai5 = 'ngày 29 tháng 2 ' + ' năm ' + nam
+    } else if (ngay == 1 && thang == 3) {
+        kqBai5 = 'ngày 28 tháng 2 ' + ' năm ' + nam
+    } else if (ngay == 1 && (thang == 4 || thang == 6 || thang == 8 || thang == 9 || thang || 11)) {
+        kqBai5 = 'ngày 31 tháng ' + (thang - 1) + ' năm ' + nam
+    } else {
+        kqBai5 = 'ngày ' + (ngay - 1) + ' tháng ' + thang + ' năm ' + nam
+    }
+    document.querySelector('.right .kqBai5').innerHTML = kqBai5
+}
+document.getElementById('btn_bai52').onclick = function () {
+    var ngay = Number(document.getElementById('ngay').value)
+    var thang = Number(document.getElementById('thang').value)
+    var nam = Number(document.getElementById('nam').value)
+    var kqBai5;
+    if (thang < 1 || thang > 12 || nam < 0) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if ((thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10) && (ngay < 1 || ngay > 31)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if ((thang == 4 || thang == 6 || thang == 9 || thang == 11) && (ngay < 1 || ngay > 30)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if (thang == 2 && nam % 4 == 0 && (ngay < 1 || ngay > 29)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if (thang == 2 && nam % 4 != 0 && (ngay < 1 || ngay > 28)) {
+        kqBai5 = 'Không tồn tại ngày'
+    } else if (ngay == 31 && thang == 12) {
+        kqBai5 = 'ngày 1 tháng 1 năm  ' + (nam + 1)
+    } else if (ngay == 30 && (thang == 4 || thang == 6 || thang == 9 || thang == 11)) {
+        kqBai5 = 'ngày 1 tháng ' + (thang + 1) + ' năm ' + nam
+    } else if (ngay == 29 && thang == 2 && nam % 4 == 0) {
+        kqBai5 = 'ngày 1 tháng 3 ' + ' năm ' + nam
+    } else if (ngay == 31 && (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10)) {
+        kqBai5 = 'ngày 1 tháng ' + (thang + 1) + ' năm ' + nam
+    } else {
+        kqBai5 = 'ngày ' + (ngay + 1) + ' tháng ' + thang + ' năm ' + nam
+    }
+    document.querySelector('.right .kqBai5').innerHTML = kqBai5
+}
