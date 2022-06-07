@@ -215,7 +215,7 @@ document.getElementById('btn_bai51').onclick = function () {
     var thang = Number(document.getElementById('thang').value)
     var nam = Number(document.getElementById('nam').value)
     var kqBai5;
-    if (thang < 1 || thang > 12 || nam < 0) {
+    if (thang < 1 || thang > 12 || nam < 1) {
         kqBai5 = 'Không tồn tại ngày'
     } else if ((thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10) && (ngay < 1 || ngay > 31)) {
         kqBai5 = 'Không tồn tại ngày'
@@ -225,6 +225,8 @@ document.getElementById('btn_bai51').onclick = function () {
         kqBai5 = 'Không tồn tại ngày'
     } else if (thang == 2 && nam % 4 != 0 && (ngay < 1 || ngay > 28)) {
         kqBai5 = 'Không tồn tại ngày'
+    } else if (ngay == 1 && thang == 1 && nam == 1) {
+        kqBai5 = 'Lịch bắt đầu từ 1/1/1'
     } else if (ngay == 1 && thang == 1) {
         kqBai5 = 'ngày 31 tháng 12 năm  ' + (nam - 1)
     } else if (ngay == 1 && (thang == 2 || thang == 5 || thang == 7 || thang == 10 || thang == 12)) {
@@ -245,7 +247,7 @@ document.getElementById('btn_bai52').onclick = function () {
     var thang = Number(document.getElementById('thang').value)
     var nam = Number(document.getElementById('nam').value)
     var kqBai5;
-    if (thang < 1 || thang > 12 || nam < 0) {
+    if (thang < 1 || thang > 12 || nam < 1) {
         kqBai5 = 'Không tồn tại ngày'
     } else if ((thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10) && (ngay < 1 || ngay > 31)) {
         kqBai5 = 'Không tồn tại ngày'
