@@ -208,8 +208,6 @@ document.getElementById('btn_bai4').onclick = function () {
     document.querySelector('.right .kqBai4').innerHTML = kqBai4
 }
 // Bài 5: Tìm ngày tháng
-
-
 document.getElementById('btn_bai51').onclick = function () {
     var ngay = Number(document.getElementById('ngay').value)
     var thang = Number(document.getElementById('thang').value)
@@ -229,13 +227,13 @@ document.getElementById('btn_bai51').onclick = function () {
         kqBai5 = 'Lịch bắt đầu từ 1/1/1'
     } else if (ngay == 1 && thang == 1) {
         kqBai5 = 'ngày 31 tháng 12 năm  ' + (nam - 1)
-    } else if (ngay == 1 && (thang == 2 || thang == 5 || thang == 7 || thang == 10 || thang == 12)) {
+    } else if (ngay == 1 && (thang == 5 || thang == 7 || thang == 10 || thang == 12)) {
         kqBai5 = 'ngày 30 tháng ' + (thang - 1) + ' năm ' + nam
     } else if (ngay == 1 && thang == 3 && nam % 4 == 0) {
         kqBai5 = 'ngày 29 tháng 2 ' + ' năm ' + nam
     } else if (ngay == 1 && thang == 3) {
         kqBai5 = 'ngày 28 tháng 2 ' + ' năm ' + nam
-    } else if (ngay == 1 && (thang == 4 || thang == 6 || thang == 8 || thang == 9 || thang || 11)) {
+    } else if (ngay == 1 && (thang == 2 || thang == 4 || thang == 6 || thang == 8 || thang == 9 || thang || 11)) {
         kqBai5 = 'ngày 31 tháng ' + (thang - 1) + ' năm ' + nam
     } else {
         kqBai5 = 'ngày ' + (ngay - 1) + ' tháng ' + thang + ' năm ' + nam
@@ -263,10 +261,31 @@ document.getElementById('btn_bai52').onclick = function () {
         kqBai5 = 'ngày 1 tháng ' + (thang + 1) + ' năm ' + nam
     } else if (ngay == 29 && thang == 2 && nam % 4 == 0) {
         kqBai5 = 'ngày 1 tháng 3 ' + ' năm ' + nam
+    } else if (ngay == 28 && thang == 2 && nam % 4 != 0) {
+        kqBai5 = 'ngày 1 tháng 3 ' + ' năm ' + nam
     } else if (ngay == 31 && (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10)) {
         kqBai5 = 'ngày 1 tháng ' + (thang + 1) + ' năm ' + nam
     } else {
         kqBai5 = 'ngày ' + (ngay + 1) + ' tháng ' + thang + ' năm ' + nam
     }
     document.querySelector('.right .kqBai5').innerHTML = kqBai5
+}
+
+// Bài 6: Đếm số ngày trong tháng
+document.getElementById('btn_bai6').onclick = function () {
+    var thang = Number(document.getElementById('b6_thang').value)
+    var nam = Number(document.getElementById('b6_nam').value)
+    var kqBai6;
+    if (thang < 1 || thang > 12 || nam < 1) {
+        kqBai6 = 'Không tồn tại'
+    } else if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10 || thang == 12) {
+        kqBai6 = 'Tháng ' + thang + ' năm ' + nam + ' có 31 ngày'
+    } else if (thang == 2 && nam % 4 == 0) {
+        kqBai6 = 'Tháng 2' + ' năm ' + nam + ' có 29 ngày'
+    } else if (thang == 2 && nam % 4 != 0) {
+        kqBai6 = 'Tháng 2' + ' năm ' + nam + ' có 28 ngày'
+    } else {
+        kqBai6 = 'Tháng ' + thang + ' năm ' + nam + ' có 30 ngày'
+    }
+    document.querySelector('.right .kqBai6').innerHTML = kqBai6
 }
