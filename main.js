@@ -209,10 +209,13 @@ document.getElementById('btn_bai4').onclick = function () {
 }
 // Bài 5: Tìm ngày tháng
 document.getElementById('btn_bai51').onclick = function () {
+    // input
     var ngay = Number(document.getElementById('ngay').value)
     var thang = Number(document.getElementById('thang').value)
     var nam = Number(document.getElementById('nam').value)
+    // output
     var kqBai5;
+    // xử lý ngày hôm qua
     if (thang < 1 || thang > 12 || nam < 1) {
         kqBai5 = 'Không tồn tại ngày'
     } else if ((thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10) && (ngay < 1 || ngay > 31)) {
@@ -241,10 +244,13 @@ document.getElementById('btn_bai51').onclick = function () {
     document.querySelector('.right .kqBai5').innerHTML = kqBai5
 }
 document.getElementById('btn_bai52').onclick = function () {
+    // input
     var ngay = Number(document.getElementById('ngay').value)
     var thang = Number(document.getElementById('thang').value)
     var nam = Number(document.getElementById('nam').value)
+    // output
     var kqBai5;
+    // xử lý ngày mai
     if (thang < 1 || thang > 12 || nam < 1) {
         kqBai5 = 'Không tồn tại ngày'
     } else if ((thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10) && (ngay < 1 || ngay > 31)) {
@@ -273,9 +279,12 @@ document.getElementById('btn_bai52').onclick = function () {
 
 // Bài 6: Đếm số ngày trong tháng
 document.getElementById('btn_bai6').onclick = function () {
+    // input
     var thang = Number(document.getElementById('b6_thang').value)
     var nam = Number(document.getElementById('b6_nam').value)
+    // output
     var kqBai6;
+    // xử lý
     if (thang < 1 || thang > 12 || nam < 1) {
         kqBai6 = 'Không tồn tại'
     } else if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10 || thang == 12) {
@@ -288,4 +297,139 @@ document.getElementById('btn_bai6').onclick = function () {
         kqBai6 = 'Tháng ' + thang + ' năm ' + nam + ' có 30 ngày'
     }
     document.querySelector('.right .kqBai6').innerHTML = kqBai6
+}
+
+//Bài 7: Đọc số nhỏ hơn 4 chữ số
+document.getElementById('btn_bai7').onclick = function () {
+    // input
+    var so3CS = Number(document.getElementById('so3CS').value)
+    var hangTram = Math.floor(so3CS / 100)
+    var hangChuc = Math.floor((so3CS % 100) / 10)
+    var hangDv = so3CS % 10
+    // output
+    var kqBai71;
+    var kqBai72;
+    var kqBai73;
+    // xử lý
+    switch (hangTram) {
+        case 0: kqBai71 = ''
+            break;
+        case 1: kqBai71 = 'Một trăm '
+            break;
+        case 2: kqBai71 = 'Hai trăm '
+            break;
+        case 3: kqBai71 = 'Ba trăm '
+            break;
+        case 4: kqBai71 = 'Bốn trăm '
+            break;
+        case 5: kqBai71 = 'Năm trăm '
+            break;
+        case 6: kqBai71 = 'Sáu trăm '
+            break;
+        case 7: kqBai71 = 'Bảy trăm '
+            break;
+        case 8: kqBai71 = 'Tám trăm '
+            break;
+        case 9: kqBai71 = 'Chín trăm '
+            break;
+    }
+    switch (hangChuc) {
+        case 0: kqBai72 = ''
+            break;
+        case 1: kqBai72 = 'mười '
+            break;
+        case 2: kqBai72 = 'hai mươi '
+            break;
+        case 3: kqBai72 = 'ba mươi '
+            break;
+        case 4: kqBai72 = 'bốn mươi '
+            break;
+        case 5: kqBai72 = 'năm mươi '
+            break;
+        case 6: kqBai72 = 'sáu mươi '
+            break;
+        case 7: kqBai72 = 'bảy mươi '
+            break;
+        case 8: kqBai72 = 'tám mươi '
+            break;
+        case 9: kqBai72 = 'chín mươi '
+            break;
+    }
+    switch (hangDv) {
+        case 0: kqBai73 = ''
+            break;
+        case 1: kqBai73 = 'một'
+            break;
+        case 2: kqBai73 = 'hai'
+            break;
+        case 3: kqBai73 = 'ba'
+            break;
+        case 4: kqBai73 = 'bốn'
+            break;
+        case 5: kqBai73 = 'năm'
+            break;
+        case 6: kqBai73 = 'sáu'
+            break;
+        case 7: kqBai73 = 'bảy'
+            break;
+        case 8: kqBai73 = 'tám'
+            break;
+        case 9: kqBai73 = 'chín '
+            break;
+    }
+    if (hangTram == 0 && hangChuc == 0 && hangDv == 0) {
+        kqBai71 = 'Không'
+    }
+    if (hangTram != 0 && hangChuc == 0 && hangDv != 0) {
+        kqBai72 = 'linh '
+    }
+    if (hangChuc != 0 && hangDv == 5) {
+        kqBai73 = 'lăm'
+    }
+    if (hangTram != 0 && hangChuc == 0 && hangDv == 4) {
+        kqBai73 = 'tư'
+    }
+    if (hangChuc > 1 && hangDv == 4) {
+        kqBai73 = 'tư'
+    }
+    document.querySelector('.right .kqBai7').innerHTML = kqBai71 + kqBai72 + kqBai73
+}
+// Bai 8: In tên sinh viên xa trường nhất
+document.getElementById('btn_bai8').onclick = function () {
+    // input
+    var sv1 = document.getElementById('sv1').value
+    var sv1X = Number(document.getElementById('sv1X').value)
+    var sv1Y = Number(document.getElementById('sv1Y').value)
+    var sv2 = document.getElementById('sv2').value
+    var sv2X = Number(document.getElementById('sv2X').value)
+    var sv2Y = Number(document.getElementById('sv2Y').value)
+    var sv3 = document.getElementById('sv3').value
+    var sv3X = Number(document.getElementById('sv3X').value)
+    var sv3Y = Number(document.getElementById('sv3Y').value)
+    var X = Number(document.getElementById('X').value)
+    var Y = Number(document.getElementById('Y').value)
+    var sv1_TH = Math.pow((X - sv1X), 2) + Math.pow((Y - sv1Y), 2)
+    var sv2_TH = Math.pow((X - sv2X), 2) + Math.pow((Y - sv2Y), 2)
+    var sv3_TH = Math.pow((X - sv3X), 2) + Math.pow((Y - sv3Y), 2)
+    // output
+    var kqBai8
+    // xử lý
+    if (sv1_TH > sv2_TH) {
+        if (sv2_TH > sv3_TH) {
+            kqBai8 = sv1
+        } else if (sv3_TH > sv1_TH) {
+            kqBai8 = sv3
+        } else {
+            kqBai8 = sv1
+        }
+    } else {
+        if (sv2_TH < sv3_TH) {
+            kqBai8 = sv3
+        } else if (sv3_TH < sv1_TH) {
+            kqBai8 = sv2
+        } else {
+            kqBai8 = sv2
+        }
+    }
+    document.querySelector('.right .kqBai8').innerHTML = 'Sinh viên xa trường nhất: ' + kqBai8
 }

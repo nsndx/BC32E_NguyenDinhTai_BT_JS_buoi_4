@@ -56,9 +56,12 @@
 .right .bai:first-child {
   display: block;
 }
-
 .right h1 {
   margin-bottom: 20px;
+}
+.right h3 {
+  margin-bottom: 10px;
+  color: brown;
 }
 input[type="number"]::-webkit-inner-spin-button {
   appearance: none;
@@ -82,7 +85,6 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #fff;
   box-shadow: 1px 3px 3px #aaa;
 }
-
 .right button {
   font-size: 20px;
   padding: 10px 20px;
