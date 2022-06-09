@@ -392,6 +392,9 @@ document.getElementById('btn_bai7').onclick = function () {
     if (hangChuc > 1 && hangDv == 4) {
         kqBai73 = 'tư'
     }
+    if (hangChuc > 1 && hangDv == 1) {
+        kqBai73 = 'mốt'
+    }
     document.querySelector('.right .kqBai7').innerHTML = kqBai71 + kqBai72 + kqBai73
 }
 // Bai 8: In tên sinh viên xa trường nhất
