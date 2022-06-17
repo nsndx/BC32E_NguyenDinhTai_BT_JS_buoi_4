@@ -83,6 +83,7 @@ x[7].onclick = function () {
         t[7].style.display = 'block'
     }
 }
+
 //Bài 1: Sắp xếp 3 số nguyên tăng dần
 /* Mô hình 3 khối
  - Đầu vào: 3 số nguyên
@@ -99,7 +100,7 @@ document.getElementById('btn_bai1').onclick = function () {
     var b1_soThu1 = Number(document.getElementById('b1_soThu1').value)
     var b1_soThu2 = Number(document.getElementById('b1_soThu2').value)
     var b1_soThu3 = Number(document.getElementById('b1_soThu3').value)
-    var kqBai1;
+    var kqBai1 ='';
     if (b1_soThu1 > b1_soThu2) {
         if (b1_soThu2 > b1_soThu3) {
             kqBai1 = b1_soThu3 + ' < ' + b1_soThu2 + ' < ' + b1_soThu1
@@ -119,6 +120,7 @@ document.getElementById('btn_bai1').onclick = function () {
     }
     document.querySelector('.right .kqBai1').innerHTML = kqBai1
 }
+
 // Bài 2: Chương trình chào hỏi
 /*Mô hình 3 khối
 - Đầu vào: Lựa chọn 1 trong 4 thành viên của gia đình gồm (Bố, Mẹ, anh Trai, em Gái)
@@ -131,7 +133,7 @@ document.getElementById('btn_bai1').onclick = function () {
  */
 document.getElementById('btn_bai2').onclick = function () {
     var cacThanhVien = document.getElementById('cacThanhVien').value
-    var kqBai2;
+    var kqBai2 ='';
     if (cacThanhVien == 'bo') {
         kqBai2 = 'Xin chào Bố!'
     } else if (cacThanhVien == 'me') {
@@ -145,6 +147,7 @@ document.getElementById('btn_bai2').onclick = function () {
     }
     document.querySelector('.right .kqBai2').innerHTML = kqBai2
 }
+
 //Bài 3: Đếm số chẵn, số lẻ
 /* Mô hình 3 khối
 - Đầu vào: 3 số nguyên
@@ -173,6 +176,7 @@ document.getElementById('btn_bai3').onclick = function () {
     }
     document.querySelector('.right .kqBai3').innerHTML = 'có ' + kqBai3 + ' số chẵn' + ', ' + (3 - kqBai3) + ' số lẻ'
 }
+
 // Bài 4: Nhận biết tam giác
 /*Mô hình 3 khối
  - Đầu vào: chiều dài 3 cạnh của tam giác
@@ -195,7 +199,7 @@ document.getElementById('btn_bai4').onclick = function () {
     var canh1Bp = canh1 * canh1
     var canh2Bp = canh2 * canh2
     var canh3Bp = canh3 * canh3
-    var kqBai4;
+    var kqBai4 ='';
     if (canh1 == canh2 && canh1 == canh3 && canh2 == canh3) {
         kqBai4 = 'Tam giác đều'
     } else if (canh1 == canh2 || canh1 == canh3 || canh2 == canh3) {
@@ -207,14 +211,15 @@ document.getElementById('btn_bai4').onclick = function () {
     }
     document.querySelector('.right .kqBai4').innerHTML = kqBai4
 }
+
 // Bài 5: Tìm ngày tháng
 document.getElementById('btn_bai51').onclick = function () {
-    // input
+    // input: number
     var ngay = Number(document.getElementById('ngay').value)
     var thang = Number(document.getElementById('thang').value)
     var nam = Number(document.getElementById('nam').value)
-    // output
-    var kqBai5;
+    // output: string
+    var kqBai5 = '';
     // xử lý ngày hôm qua
     if (thang < 1 || thang > 12 || nam < 1) {
         kqBai5 = 'Không tồn tại ngày'
@@ -241,15 +246,16 @@ document.getElementById('btn_bai51').onclick = function () {
     } else {
         kqBai5 = 'ngày ' + (ngay - 1) + ' tháng ' + thang + ' năm ' + nam
     }
+    // in output ra giao diện
     document.querySelector('.right .kqBai5').innerHTML = kqBai5
 }
 document.getElementById('btn_bai52').onclick = function () {
-    // input
+    // input: number
     var ngay = Number(document.getElementById('ngay').value)
     var thang = Number(document.getElementById('thang').value)
     var nam = Number(document.getElementById('nam').value)
-    // output
-    var kqBai5;
+    // output: string
+    var kqBai5 = '';
     // xử lý ngày mai
     if (thang < 1 || thang > 12 || nam < 1) {
         kqBai5 = 'Không tồn tại ngày'
@@ -274,16 +280,17 @@ document.getElementById('btn_bai52').onclick = function () {
     } else {
         kqBai5 = 'ngày ' + (ngay + 1) + ' tháng ' + thang + ' năm ' + nam
     }
+    // in output ra giao diện
     document.querySelector('.right .kqBai5').innerHTML = kqBai5
 }
 
 // Bài 6: Đếm số ngày trong tháng
 document.getElementById('btn_bai6').onclick = function () {
-    // input
+    // input: number
     var thang = Number(document.getElementById('b6_thang').value)
     var nam = Number(document.getElementById('b6_nam').value)
-    // output
-    var kqBai6;
+    // output: string
+    var kqBai6 = '';
     // xử lý
     if (thang < 1 || thang > 12 || nam < 1) {
         kqBai6 = 'Không tồn tại'
@@ -296,20 +303,21 @@ document.getElementById('btn_bai6').onclick = function () {
     } else {
         kqBai6 = 'Tháng ' + thang + ' năm ' + nam + ' có 30 ngày'
     }
+    // in output ra giao diện
     document.querySelector('.right .kqBai6').innerHTML = kqBai6
 }
 
 //Bài 7: Đọc số nhỏ hơn 4 chữ số
 document.getElementById('btn_bai7').onclick = function () {
-    // input
+    // input: number
     var so3CS = Number(document.getElementById('so3CS').value)
     var hangTram = Math.floor(so3CS / 100)
     var hangChuc = Math.floor((so3CS % 100) / 10)
     var hangDv = so3CS % 10
-    // output
-    var kqBai71;
-    var kqBai72;
-    var kqBai73;
+    // output: string
+    var kqBai71 = '';
+    var kqBai72 = '';
+    var kqBai73 = '';
     // xử lý
     switch (hangTram) {
         case 0: kqBai71 = ''
@@ -395,11 +403,13 @@ document.getElementById('btn_bai7').onclick = function () {
     if (hangChuc > 1 && hangDv == 1) {
         kqBai73 = 'mốt'
     }
+    // in output ra giao diện
     document.querySelector('.right .kqBai7').innerHTML = kqBai71 + kqBai72 + kqBai73
 }
+
 // Bai 8: In tên sinh viên xa trường nhất
 document.getElementById('btn_bai8').onclick = function () {
-    // input
+    // input: string, number
     var sv1 = document.getElementById('sv1').value
     var sv1X = Number(document.getElementById('sv1X').value)
     var sv1Y = Number(document.getElementById('sv1Y').value)
@@ -414,8 +424,8 @@ document.getElementById('btn_bai8').onclick = function () {
     var sv1_TH = Math.pow((X - sv1X), 2) + Math.pow((Y - sv1Y), 2)
     var sv2_TH = Math.pow((X - sv2X), 2) + Math.pow((Y - sv2Y), 2)
     var sv3_TH = Math.pow((X - sv3X), 2) + Math.pow((Y - sv3Y), 2)
-    // output
-    var kqBai8
+    // output: sring
+    var kqBai8 ='';
     // xử lý
     if (sv1_TH > sv2_TH) {
         if (sv2_TH > sv3_TH) {
@@ -434,5 +444,6 @@ document.getElementById('btn_bai8').onclick = function () {
             kqBai8 = sv2
         }
     }
+    // in output ra giao diện
     document.querySelector('.right .kqBai8').innerHTML = 'Sinh viên xa trường nhất: ' + kqBai8
 }
